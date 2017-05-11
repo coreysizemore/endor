@@ -431,6 +431,16 @@ header.header_page.header_page_mobile {
 			}
 		}
 		
+		li.menu-item-has-children {
+			& > a:link,
+			& > a:visited {
+				background: url('cornerstone/features/light_arrow_down.png') no-repeat;
+				background-position: right center;
+				background-size: 18px 18px;
+				padding-right: 20px;
+			}
+		}
+		
 		li:last-child {
 			padding-right: 0px;
 		}
@@ -723,21 +733,36 @@ a#mobileclose:visited {
 			
 			li {
 				display: inline-block;
-				padding: 0px 15px;
+				padding: 0px 5px;
+				width: 100px;
 				
 				a:link,a:visited {
 					color: $light_font;
-					background: $primary;
 					font-weight: 400;
 					font-family: $secondary_font;
 					font-size: .8em;
 					font-weight: 500;
 					letter-spacing: 2px;
-					padding: 15px 30px;
 					text-decoration: none;
 					text-transform: uppercase;
 					@include transition(.1s);
 					@include border-radius(5px);
+					
+					.icon {
+						background: $primary;
+						display: block;
+						height: 70px;
+						font-size: 22px;
+						line-height: 70px;
+						margin: 0 auto 10px auto;
+						width: 70px;
+						@include transition(.1s);
+						@include border-radius(35px);
+					}
+					
+					.icon:hover {
+						opacity: .7;
+					}
 				}
 				
 				a:hover,a:active {
