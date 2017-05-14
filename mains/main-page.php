@@ -20,8 +20,27 @@
 				<div class="row gutters">
 						
 					<?php if( get_field('sidebar_selection') == 'right' ): ?>
+					
+						<div class="col_2 first">
+							
+							<div class="content">
+								
+								<h2 class="page_heading"><?php csdd_the_title(); ?></h2>
+		
+								<?php
 						
-						<div class="col_9 first">
+									if(get_field('page_sub_heading'))
+									{
+										echo '<h3 class="page_subheading">' . get_field('page_sub_heading') . '</h3>';
+									}
+												
+								?>
+								
+							</div>
+							
+						</div>
+						
+						<div class="col_7">
 								
 							<div class="content">
 					
@@ -41,7 +60,26 @@
 					
 					<?php if( get_field('sidebar_selection') == 'none' ): ?>
 					
-						<div class="col_12">
+						<div class="col_2 first">
+							
+							<div class="content">
+								
+								<h2 class="page_heading"><?php csdd_the_title(); ?></h2>
+		
+								<?php
+						
+									if(get_field('page_sub_heading'))
+									{
+										echo '<h3 class="page_subheading">' . get_field('page_sub_heading') . '</h3>';
+									}
+												
+								?>
+								
+							</div>
+							
+						</div>
+					
+						<div class="col_10 last">
 							
 							<div class="content">
 				
@@ -61,11 +99,30 @@
 							
 						</div>
 						
-						<div class="col_9 last">
+						<div class="col_7">
 							
 							<div class="content">
 				
 								<?php get_template_part( 'loops/loop', 'page' ); ?>
+								
+							</div>
+							
+						</div>
+						
+						<div class="col_2 last">
+							
+							<div class="content">
+								
+								<h2 class="page_heading"><?php csdd_the_title(); ?></h2>
+		
+								<?php
+						
+									if(get_field('page_sub_heading'))
+									{
+										echo '<h3 class="page_subheading">' . get_field('page_sub_heading') . '</h3>';
+									}
+												
+								?>
 								
 							</div>
 							
@@ -207,11 +264,45 @@
 					
 				while ( have_rows('one_columns') ) : the_row();
 					        
-					echo '<div class="column_wrapper"><div class="container"><div class="row gutters"><div class="col_12"><div class="content">';
+					echo '<div class="column_wrapper"><div class="container"><div class="row gutters">';
+					
+					if( get_sub_field('section_title') ):
+					
+						echo'<div class="col_2 first"><div class="content"><h2 class="page_heading">';
+						
+						the_sub_field('section_title');
+						
+						echo '</h2>';
+						
+						if( get_sub_field('section_sub_title') ):
+					
+							echo' <h3 class="page_subheading">';
+							
+							the_sub_field('section_sub_title');
+							
+							echo '</h3>';
+							
+						endif;
+						
+						echo '</div></div>';
+						
+						echo '<div class="col_10 last"><div class="content">';
 					        
-					the_sub_field('column_1');
-					        
-					echo '</div></div></div></div></div>';
+						the_sub_field('column_1');
+						        
+						echo '</div></div>';
+						
+					else :
+					
+						echo '<div class="col_12"><div class="content">';
+						        
+						the_sub_field('column_1');
+						        
+						echo '</div></div>';
+					
+					endif;
+					
+					echo '</div></div></div>';
 					
 				endwhile;
 						
@@ -224,16 +315,58 @@
 			if( have_rows('two_columns') ):
 					
 				while ( have_rows('two_columns') ) : the_row();
-					        
-					echo '<div class="column_wrapper"><div class="container"><div class="row gutters"><div class="col_6 first"><div class="content">';
-					        
-					the_sub_field('column_1');
-					        
-					echo '</div></div><div class="col_6 last"><div class="content">';
-					        
-					the_sub_field('column_2');
-					        
-					echo '</div></div></div></div></div>';
+				
+					echo '<div class="column_wrapper"><div class="container"><div class="row gutters">';
+					
+					if( get_sub_field('section_title') ):
+					
+						echo'<div class="col_2 first"><div class="content"><h2 class="page_heading">';
+						
+						the_sub_field('section_title');
+						
+						echo '</h2>';
+						
+						if( get_sub_field('section_sub_title') ):
+					
+							echo' <h3 class="page_subheading">';
+							
+							the_sub_field('section_sub_title');
+							
+							echo '</h3>';
+							
+						endif;
+						
+						echo '</div></div>';
+						
+						echo '<div class="col_5"><div class="content">';
+						        
+						the_sub_field('column_1');
+						        
+						echo '</div></div>';
+						
+						echo '<div class="col_5 last"><div class="content">';
+						        
+						the_sub_field('column_2');
+						        
+						echo '</div></div>';
+						
+					else :
+					
+						echo '<div class="col_6 first"><div class="content">';
+						        
+						the_sub_field('column_1');
+						        
+						echo '</div></div>';
+						
+						echo '<div class="col_6 last"><div class="content">';
+						        
+						the_sub_field('column_2');
+						        
+						echo '</div></div>';
+					
+					endif;
+					
+					echo '</div></div></div>';
 					
 				endwhile;
 						
@@ -246,16 +379,58 @@
 			if( have_rows('one_three_columns') ):
 					
 				while ( have_rows('one_three_columns') ) : the_row();
-					        
-					echo '<div class="column_wrapper"><div class="container"><div class="row gutters"><div class="col_3 first"><div class="content">';
-					        
-					the_sub_field('column_1');
-					        
-					echo '</div></div><div class="col_9 last"><div class="content">';
-					        
-					the_sub_field('column_2');
-					        
-					echo '</div></div></div></div></div>';
+				
+					echo '<div class="column_wrapper"><div class="container"><div class="row gutters">';
+					
+					if( get_sub_field('section_title') ):
+					
+						echo'<div class="col_2 first"><div class="content"><h2 class="page_heading">';
+						
+						the_sub_field('section_title');
+						
+						echo '</h2>';
+						
+						if( get_sub_field('section_sub_title') ):
+					
+							echo' <h3 class="page_subheading">';
+							
+							the_sub_field('section_sub_title');
+							
+							echo '</h3>';
+							
+						endif;
+						
+						echo '</div></div>';
+						
+						echo '<div class="col_3"><div class="content">';
+						        
+						the_sub_field('column_1');
+						        
+						echo '</div></div>';
+						
+						echo '<div class="col_7 last"><div class="content">';
+						        
+						the_sub_field('column_2');
+						        
+						echo '</div></div>';
+						
+					else :
+					
+						echo '<div class="col_3 first"><div class="content">';
+						        
+						the_sub_field('column_1');
+						        
+						echo '</div></div>';
+						
+						echo '<div class="col_9 last"><div class="content">';
+						        
+						the_sub_field('column_2');
+						        
+						echo '</div></div>';
+					
+					endif;
+					
+					echo '</div></div></div>';
 					
 				endwhile;
 						
@@ -269,15 +444,57 @@
 					
 				while ( have_rows('three_one_columns') ) : the_row();
 					        
-					echo '<div class="column_wrapper"><div class="container"><div class="row gutters"><div class="col_9 first"><div class="content">';
-					        
-					the_sub_field('column_1');
-					        
-					echo '</div></div><div class="col_3 last"><div class="content">';
-					        
-					the_sub_field('column_2');
-					        
-					echo '</div></div></div></div></div>';
+					echo '<div class="column_wrapper"><div class="container"><div class="row gutters">';
+					
+					if( get_sub_field('section_title') ):
+					
+						echo'<div class="col_2 first"><div class="content"><h2 class="page_heading">';
+						
+						the_sub_field('section_title');
+						
+						echo '</h2>';
+						
+						if( get_sub_field('section_sub_title') ):
+					
+							echo' <h3 class="page_subheading">';
+							
+							the_sub_field('section_sub_title');
+							
+							echo '</h3>';
+							
+						endif;
+						
+						echo '</div></div>';
+						
+						echo '<div class="col_7"><div class="content">';
+						        
+						the_sub_field('column_1');
+						        
+						echo '</div></div>';
+						
+						echo '<div class="col_3 last"><div class="content">';
+						        
+						the_sub_field('column_2');
+						        
+						echo '</div></div>';
+						
+					else :
+					
+						echo '<div class="col_9 first"><div class="content">';
+						        
+						the_sub_field('column_1');
+						        
+						echo '</div></div>';
+						
+						echo '<div class="col_3 last"><div class="content">';
+						        
+						the_sub_field('column_2');
+						        
+						echo '</div></div>';
+					
+					endif;
+					
+					echo '</div></div></div>';
 					
 				endwhile;
 						
@@ -291,19 +508,69 @@
 					
 				while ( have_rows('three_columns') ) : the_row();
 					        
-					echo '<div class="column_wrapper"><div class="container"><div class="row gutters"><div class="col_4 first"><div class="content">';
-					        
-					the_sub_field('column_1');
-					        
-					echo '</div></div><div class="col_4"><div class="content">';
-					        
-					the_sub_field('column_2');
-					    
-					echo '</div></div><div class="col_4 last"><div class="content">';
-					        
-					the_sub_field('column_3');
-					        
-					echo '</div></div></div></div></div>';
+					echo '<div class="column_wrapper"><div class="container"><div class="row gutters">';
+					
+					if( get_sub_field('section_title') ):
+					
+						echo'<div class="col_3 first"><div class="content"><h2 class="page_heading">';
+						
+						the_sub_field('section_title');
+						
+						echo '</h2>';
+						
+						if( get_sub_field('section_sub_title') ):
+					
+							echo' <h3 class="page_subheading">';
+							
+							the_sub_field('section_sub_title');
+							
+							echo '</h3>';
+							
+						endif;
+						
+						echo '</div></div>';
+						
+						echo '<div class="col_3"><div class="content">';
+						        
+						the_sub_field('column_1');
+						        
+						echo '</div></div>';
+						
+						echo '<div class="col_3"><div class="content">';
+						        
+						the_sub_field('column_2');
+						        
+						echo '</div></div>';
+						
+						echo '<div class="col_3 last"><div class="content">';
+						        
+						the_sub_field('column_3');
+						        
+						echo '</div></div>';
+						
+					else :
+					
+						echo '<div class="col_4 first"><div class="content">';
+						        
+						the_sub_field('column_1');
+						        
+						echo '</div></div>';
+						
+						echo '<div class="col_4"><div class="content">';
+						        
+						the_sub_field('column_2');
+						        
+						echo '</div></div>';
+						
+						echo '<div class="col_4 last"><div class="content">';
+						        
+						the_sub_field('column_3');
+						        
+						echo '</div></div>';
+					
+					endif;
+					
+					echo '</div></div></div>';
 					
 				endwhile;
 						

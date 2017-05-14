@@ -65,15 +65,21 @@
 			
 			<div class="row gutters">
 		
-				<div class="col_3">
+				<div class="col_2 first">
 				
 					<?php get_template_part( 'logos/logo', 'main' ); ?>
 				
 				</div>
 				
-				<div class="col_9">
+				<div class="col_8">
 				
 					<?php get_template_part( 'navs/nav', 'main' ); ?>
+				
+				</div>
+				
+				<div class="col_2 last">
+				
+					<?php get_template_part( 'navs/nav', 'social' ); ?>
 				
 				</div>
 				

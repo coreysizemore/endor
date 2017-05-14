@@ -231,7 +231,7 @@ header.header_page {
 			font-weight: 500;
 			line-height: 48px;
 			letter-spacing: -1px;
-			padding-top: 220px;
+			padding-top: 150px;
 			text-align: center;
 			text-shadow: 1px 1px 2px #000000;
 		}
@@ -376,7 +376,7 @@ header.header_page.header_page_mobile {
 				color: $light_font;
 				display: block;
 				font-family: $secondary_font;
-				font-size: .8em;
+				font-size: 14px;
 				font-weight: 600;
 				letter-spacing: 2px;
 				padding: 44px 0;
@@ -813,8 +813,23 @@ a#mobileclose:visited {
 
 /* columns */
 
-.column_wrapper.colored:nth-child(odd) {
-	background: $colored_bg;
+.main {
+	
+	.column_wrapper {
+		margin-bottom: 50px;
+	}
+	
+	.column_wrapper:nth-last-child(2) {
+		margin-bottom: 0px;
+	}
+	
+	.default_editor + .column_wrapper {
+		margin-top: 50px;
+	}
+	
+	.column_wrapper.colored:nth-child(odd) {
+		background: $colored_bg;
+	}
 }
 
 /* content */
@@ -832,6 +847,7 @@ a#mobileclose:visited {
 		color: $primary;
 		font-size: 36px;
 		margin-bottom: 10px;
+		text-align: center;
 	}
 	
 	h2 {
@@ -840,11 +856,24 @@ a#mobileclose:visited {
 		margin-bottom: 10px;
 	}
 	
+	h2.page_heading {
+		color: $primary;
+		font-size: 20px;
+		font-weight: 400;
+		line-height: 26px;
+		margin-bottom: 5px;
+	}
+	
 	h3 {
 		color: $primary;
 		font-size: 22px;
 		font-weight: 400;
 		margin-bottom: 10px;
+	}
+	
+	h3.page_subheading {
+		color: $dark_font;
+		font-size: 22px;
 	}
 	
 	h3.page_title {
@@ -1029,7 +1058,7 @@ hr.divider {
 	border: 0px;
 	display: block;
 	height: 2px;
-	margin: 30px 0px;
+	margin: 30px auto;
 	width: 100px;
 }
 
@@ -1587,7 +1616,7 @@ article.blog_entry {
 		background: rgba(0,0,0,.5);
 		display: block;
 		height: calc(100% - 280px);
-		padding: 140px 0;
+		padding: 150px 0;
 		width: 100%;
 		
 		h1, h2, h3, h4 {

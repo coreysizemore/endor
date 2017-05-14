@@ -59,7 +59,7 @@
 	
 	if( has_post_thumbnail() ):
 	
-		echo '<header class="header_page header_page_home page_add_image ' . basename(get_permalink()) . '" data-stellar-background-ratio="0.9" style="background-image: url('; 
+		echo '<header class="header_page header_page_home page_add_image blog ' . basename(get_permalink()) . '" data-stellar-background-ratio="0.9" style="background-image: url('; 
 				
 		the_post_thumbnail_url( 'full' );
 		
@@ -67,7 +67,7 @@
 		
 	else :
 	
-		echo '<header class="header_page header_page_home page_default_image ' . basename(get_permalink()) . '" data-stellar-background-ratio="0.9">';		
+		echo '<header class="header_page header_page_home page_default_image blog ' . basename(get_permalink()) . '" data-stellar-background-ratio="0.9">';		
 	
 	endif;
 	
@@ -81,15 +81,21 @@
 			
 			<div class="row gutters">
 		
-				<div class="col_3">
+				<div class="col_2 first">
 				
 					<?php get_template_part( 'logos/logo', 'main' ); ?>
 				
 				</div>
 				
-				<div class="col_9">
+				<div class="col_8">
 				
 					<?php get_template_part( 'navs/nav', 'main' ); ?>
+				
+				</div>
+				
+				<div class="col_2 last">
+				
+					<?php get_template_part( 'navs/nav', 'social' ); ?>
 				
 				</div>
 				
@@ -113,7 +119,7 @@
 	
 	if( get_field('mobile_header_image') ):
 	
-		echo '<header class="header_page header_page_mobile ' . basename(get_permalink()) . '" style="background-image: url('; 
+		echo '<header class="header_page header_page_mobile blog ' . basename(get_permalink()) . '" style="background-image: url('; 
 				
 		the_field('mobile_header_image');
 		
@@ -121,7 +127,7 @@
 	
 	elseif( has_post_thumbnail() ):
 	
-		echo '<header class="header_page header_page_mobile ' . basename(get_permalink()) . '" style="background-image: url('; 
+		echo '<header class="header_page header_page_mobile blog ' . basename(get_permalink()) . '" style="background-image: url('; 
 				
 		the_post_thumbnail_url( 'full' );
 		
@@ -129,7 +135,7 @@
 		
 	else :
 	
-		echo '<header class="header_page header_page_mobile page_default_image ' . basename(get_permalink()) . '">';	
+		echo '<header class="header_page header_page_mobile page_default_image blog ' . basename(get_permalink()) . '">';	
 	
 	endif;
 	

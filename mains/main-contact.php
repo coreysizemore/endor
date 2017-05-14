@@ -20,8 +20,27 @@
 				<div class="row gutters">
 						
 					<?php if( get_field('sidebar_selection') == 'right' ): ?>
+					
+						<div class="col_2 first">
+							
+							<div class="content">
+								
+								<h2 class="page_heading"><?php csdd_the_title(); ?></h2>
+		
+								<?php
 						
-						<div class="col_9 first">
+									if(get_field('page_sub_heading'))
+									{
+										echo '<h3 class="page_subheading">' . get_field('page_sub_heading') . '</h3>';
+									}
+												
+								?>
+								
+							</div>
+							
+						</div>
+						
+						<div class="col_7 first">
 								
 							<div class="content">
 					
@@ -41,7 +60,26 @@
 					
 					<?php if( get_field('sidebar_selection') == 'none' ): ?>
 					
-						<div class="col_12">
+						<div class="col_2 first">
+							
+							<div class="content">
+								
+								<h2 class="page_heading"><?php csdd_the_title(); ?></h2>
+		
+								<?php
+						
+									if(get_field('page_sub_heading'))
+									{
+										echo '<h3 class="page_subheading">' . get_field('page_sub_heading') . '</h3>';
+									}
+												
+								?>
+								
+							</div>
+							
+						</div>
+					
+						<div class="col_10 last">
 							
 							<div class="content">
 				
@@ -61,11 +99,30 @@
 							
 						</div>
 						
-						<div class="col_9 last">
+						<div class="col_9">
 							
 							<div class="content">
 				
 								<?php get_template_part( 'loops/loop', 'contact' ); ?>
+								
+							</div>
+							
+						</div>
+						
+						<div class="col_2 last">
+							
+							<div class="content">
+								
+								<h2 class="page_heading"><?php csdd_the_title(); ?></h2>
+		
+								<?php
+						
+									if(get_field('page_sub_heading'))
+									{
+										echo '<h3 class="page_subheading">' . get_field('page_sub_heading') . '</h3>';
+									}
+												
+								?>
 								
 							</div>
 							
