@@ -40,11 +40,11 @@
 							
 						</div>
 						
-						<div class="col_7 first">
+						<div class="col_7">
 								
 							<div class="content">
 					
-								<?php get_template_part( 'loops/loop', 'contact' ); ?>
+								<?php get_template_part( 'loops/loop', 'page' ); ?>
 									
 							</div>
 								
