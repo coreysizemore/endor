@@ -518,6 +518,9 @@ header.header_page.header_page_mobile {
 				li {
 					a:link,a:visited {
 						color: $light_font;
+						display: block;
+  						padding: 10px 20px;
+  						width: 100%;
 					}
 				}
 			}
@@ -688,6 +691,11 @@ a#mobileclose:visited {
 			  	font-weight: 300;
 			  	opacity: .5;
 			}
+		}
+		
+		.bottom_spacing {
+			display: block;
+			height: 100px;
 		}
 	}
 }
