@@ -2,7 +2,7 @@
 	
 	/*
 		@package WordPress
-		@subpackage endor
+		@subpackage hoth
 	*/
 
 	require_once locate_template('/lib/page_title.php');
